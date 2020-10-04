@@ -1,0 +1,1 @@
+console.log(encodeToEUCKR("안녕"))

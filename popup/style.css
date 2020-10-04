@@ -1,0 +1,52 @@
+:root {
+  background: #323232;
+
+  width: 250px;
+  height: 250px;
+
+  transition: width 1s, height .5s;
+}
+
+body {
+  display: flex;
+  vertical-align: center;
+  margin: 0;
+  padding: 0;
+  background: #323232;
+}
+
+#options {
+  margin-top: 50px;
+  color: #fff;
+}
+
+.option-name {
+  text-align: center;
+}
+
+.ps {
+  opacity: .7;
+  cursor: pointer;
+}
+
+.switch {
+  cursor: pointer;
+}
+
+#grade {
+  width: 30px;
+}
+
+#clas {
+  width: 50px;
+}
+
+.ginput {
+  border: none;
+  border-bottom: 2px solid white;
+  outline: 1;
+  background: #323232;
+  color: white;
+
+  margin-top: 20px;
+}
