@@ -2,6 +2,12 @@
   "manifest_version": 2,
   "version": "0.1",
   "name": "EBS Online Class Comcigan",
+  "icons": {
+    "16": "icons/16.png",
+    "32": "icons/32.png",
+    "64": "icons/64.png",
+    "128": "icons/128.png"
+  },
   "background": {
     "page": "background/background.html",
     "persistent": true
