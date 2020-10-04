@@ -28,26 +28,17 @@
     "storage",
     "tabs",
     "*://*.ebssw.kr/*/hmpg/hmpgAlctcrListView.do?menuSn=*",
-    "*://comci.kr:*/*",
     "*://comci.kr/*"
   ],
   "content_scripts": [
     {
       "matches": [
-        "http://comci.kr/st",
         "*://*.ebssw.kr/*/hmpg/hmpgAlctcrListView.do?menuSn=*"
       ],
       "js": [
         "jquery/jquery-3.5.1.min.js",
         "ext/unicode-csaiur.js",
-        "ext/comcigan-parser.js"
-      ]
-    },
-    {
-      "matches": [
-        "*://*.ebssw.kr/*/hmpg/hmpgAlctcrListView.do?menuSn=*"
-      ],
-      "js": [
+        "ext/comcigan-parser.js",
         "onListView/script.js"
       ],
       "css": [

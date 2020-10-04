@@ -19,10 +19,6 @@ const comciParse = () => {
     })
 }
 
-const onListClick = (e) => {
-    console.log(e.target)
-}
-
 const weekday = {
     "월": 0,
     "화": 1,
@@ -53,13 +49,11 @@ const subject = {
 
 $(document).ready(() => {
     chrome.storage.local.get((items) => {
-        console.log(items)
         let isON = items['isON'],
             school = items['schoolName'],
             grade = items['grade'],
             clas = items['clas']
 
-        console.log(isON, school, grade, clas)
         if (isON && school && grade && clas) {
             var map = new Map(); //<String,HTMLElement>
             $("li.clearfix").each((_, t) => {
@@ -69,13 +63,10 @@ $(document).ready(() => {
                 map[temp] = t;
             });
 
-            console.log(map);
-
             $("li.clearfix").remove();
 
             comciParse().then(
                 (time) => {
-                    console.log(time)
                     // time [학년][반][0~4(월~금 토,일=0)]
                     time[grade][clas][weekday[jsDateWeekday[new Date().getDay()]]]
                         .forEach((c, i) => {

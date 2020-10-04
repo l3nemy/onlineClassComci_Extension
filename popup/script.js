@@ -30,7 +30,7 @@ function School() {
     })
     $("#school").on("change", (e) => {
         e.preventDefault()
-        console.log("called")
+        console.log("school changed")
         $(".err").remove()
         $("#school").css("border-bottom-color", "white")
 

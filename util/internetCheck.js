@@ -5,9 +5,7 @@ const internetConnectionCheck = async () => {
             xhr.open("GET", "http://comci.kr/st")
             xhr.send()
             xhr.onload = () => {
-                console.log(xhr)
                 xx = xhr;
-                console.log(xhr.status, xhr.statusText, xhr.status == 200)
                 switch (xhr.status) {
                     case 0:
                         reject(new Error("Internet Not Connected"))
