@@ -26,7 +26,6 @@
   },
   "permissions": [
     "storage",
-    "tabs",
     "*://*.ebssw.kr/*/hmpg/hmpgAlctcrListView.do?menuSn=*",
     "*://comci.kr/*"
   ],
