@@ -1,3 +1,6 @@
+const comciInternalBaseURL = "http://comci.kr:4082"
+const comciInternalURL = comciInternalBaseURL + "/st"
+
 const errNoTab = new Error("No Tab Found"),
     errNoID = new Error("Tab Found but No ID"),
     errInvalidTab = new Error("Selected Invalid Tab");

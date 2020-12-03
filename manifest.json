@@ -1,6 +1,6 @@
 {
   "manifest_version": 2,
-  "version": "0.2",
+  "version": "0.2a",
   "name": "컴시간 온클",
   "icons": {
     "16": "icons/16.png",
