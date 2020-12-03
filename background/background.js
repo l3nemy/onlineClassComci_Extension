@@ -1,18 +1,20 @@
-//https://stackoverflow.com/questions/11684454/getting-the-source-html-of-the-current-page-from-chrome-extension
+const comciInternalBaseURL = "http://comci.kr:4082"
+const comciInternalURL = comciInternalBaseURL + "/st"
+
 chrome.runtime.onMessage.addListener((request, sender, respond) => {
     if (request.action == "comci-parse") {
         console.log("init")
         let schoolName = request.schoolName
         let grade = request.grade
         let clas = request.clas
-        chrome.storage.local.get((items) => {
+        chrome.storage.local.get(items => {
             schoolName = request.schoolName || items['schoolName']
             grade = request.grade || items['grade']
             clas = request.class || items['clas']
             console.log(schoolName, grade, clas)
 
             console.log('internet check')
-            internetConnectionCheck().catch((why) => {
+            internetConnectionCheck().catch(why => {
                 console.warn(why)
                 respond(why)
                 return
@@ -24,12 +26,12 @@ chrome.runtime.onMessage.addListener((request, sender, respond) => {
             ).then(
                 () => tt.getTimetable()
             ).then(
-                (time) => {
+                time => {
                     console.log(time)
                     respond(time)
                 }
             ).catch(
-                (e) => {
+                e => {
                     console.warn(e)
                     respond(e)
                 }

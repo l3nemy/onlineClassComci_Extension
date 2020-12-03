@@ -27,8 +27,8 @@ const appendZero = (targetNumber) => {
 
 class Timetable {
   constructor() {
-    this._baseUrl = "http://comci.kr:4081";
-    this._url = "http://comci.kr:4081/st";
+    this._baseUrl = comciInternalBaseURL;
+    this._url = comciInternalURL;
     this._weekdayString = ["일", "월", "화", "수", "목", "금", "토"];
     this._classTime = [];
   }

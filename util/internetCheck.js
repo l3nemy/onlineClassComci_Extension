@@ -2,7 +2,7 @@ const internetConnectionCheck = async () => {
     await new Promise((resolve, reject) => {
         try {
             let xhr = new XMLHttpRequest();
-            xhr.open("GET", "http://comci.kr/st")
+            xhr.open("GET", comciInternalURL)
             xhr.send()
             xhr.onload = () => {
                 xx = xhr;

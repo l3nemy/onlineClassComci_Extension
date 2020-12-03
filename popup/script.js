@@ -5,7 +5,7 @@ const errNoTab = new Error("No Tab Found"),
 var xx = null;
 
 function SwitchState() {
-    chrome.storage.local.get("isON", (items) => {
+    chrome.storage.local.get("isON", items => {
         items['isON'] ? $("#need-to-hide").show() : $("#need-to-hide").hide()
         $("#activate").prop("checked", items['isON'])
     })
@@ -23,12 +23,12 @@ function SwitchState() {
 }
 
 function School() {
-    chrome.storage.local.get((items) => {
+    chrome.storage.local.get(items => {
         $("#school").val(items.schoolName)
         $("#grade").val(items.grade)
         $("#clas").val(items.clas)
     })
-    $("#school").on("change", (e) => {
+    $("#school").on("change", e => {
         e.preventDefault()
         console.log("school changed")
         $(".err").remove()
@@ -49,7 +49,7 @@ function School() {
                 chrome.storage.local.set({
                     schoolName: $("#school").val()
                 }, () => { })
-            }).catch((why) => {
+            }).catch(why => {
                 $("#school").animate({
                     borderBottomColor: "red"
                 }, 500)
@@ -61,7 +61,7 @@ function School() {
                     opacity: 1
                 }, 200))
             })
-        }).catch((why) => {
+        }).catch(why => {
 
             $("#g-c").after($("<p></p>").addClass("err").text(why).css({
                 opacity: 0,
@@ -74,13 +74,13 @@ function School() {
             schoolName: $("#school").val()
         })
     })
-    $("#grade").on("change", (e) => {
+    $("#grade").on("change", e => {
         e.preventDefault()
         chrome.storage.local.set({
             grade: $("#grade").val().toString()
         }, () => { })
     })
-    $("#clas").on("change", (e) => {
+    $("#clas").on("change", e => {
         e.preventDefault()
         chrome.storage.local.set({
             clas: $("#clas").val().toString()
